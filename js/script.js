@@ -5,15 +5,15 @@ window.addEventListener('load', () => {
     const restartButton = document.getElementById
         ("restart-button")
 
-const showInstructionsButton = document.getElementById('instructions-button');
-const instructions = document.getElementById('instructions');
-function showInstructions() {
-    instructions.style.display = 'block';
-  }
-console.log(showInstructionsButton)
-showInstructionsButton.addEventListener('click', function () {
-    showInstructions();
-})
+    const showInstructionsButton = document.getElementById('instructions-button');
+    const instructions = document.getElementById('instructions');
+    function showInstructions() {
+        instructions.style.display = 'block';
+    }
+    console.log(showInstructionsButton)
+    showInstructionsButton.addEventListener('click', function () {
+        showInstructions();
+    })
 
     let game
 
@@ -27,7 +27,7 @@ showInstructionsButton.addEventListener('click', function () {
             const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
 
             if (possibleKeyStrokes.includes(key)) {
-        
+
                 // Update player directionX and directionY based on the key pressed
                 switch (key) {
                     case "ArrowLeft":
@@ -44,7 +44,7 @@ showInstructionsButton.addEventListener('click', function () {
                         break
                 }
 
-                console.log(game.player.directionX, game.ship.directionY)
+                console.log(game.player.directionX, game.player.directionY)
             }
         })
 
@@ -54,7 +54,7 @@ showInstructionsButton.addEventListener('click', function () {
             const possibleKeystrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
 
             if (possibleKeystrokes.includes(key)) {
-                
+
 
                 // Update player directionX and directionY based on the key pressed
                 switch (key) {
@@ -74,6 +74,7 @@ showInstructionsButton.addEventListener('click', function () {
 
     startButton.addEventListener('click', function () {
         startGame();
+
     });
 
     restartButton.addEventListener('click', () => {

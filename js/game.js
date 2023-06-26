@@ -1,14 +1,14 @@
 class Game {
     constructor() {
-  
+
         this.startScreen = document.getElementById
             ('game-start')
         this.gameScreen = document.getElementById
             ('game-screen')
         this.gameEndScreen = document.getElementById
             ('game-over')
-  
-        
+
+
         this.height = 800
         this.width = 1000
         this.player = new Player(this.gameScreen)
@@ -18,31 +18,39 @@ class Game {
         this.lives = 3
         this.animateId
     }
-  
+
     start() {
         this.gameScreen.style.width = `${this.width}px`
         this.gameScreen.style.height = `${this.height}px`
-  
+
         this.startScreen.style.display = 'none'
         this.gameScreen.style.display = 'block'
-  
+
         this.gameLoop()
     }
-  
+
     gameLoop() {
         this.update()
-  
+
+        // if (this.obstacle[0].right = 1060) {
+        //     // se saiu da tela remove
+
+        //     // this.obstacle[0].element.remove()
+        // }
+        // debugger
+        console.log("left", this.obstacle[0].element.left)
+
         if (Math.random() > 0.98 && this.obstacle.length < 1) {
             this.obstacle.push(new Obstacle(this.gameScreen));
         }
-  
-  
+
+
         if (this.isGameOver) {
-           this.endGame()
+            this.endGame()
         }
         requestAnimationFrame(() => this.gameLoop())
     }
-  
+
     update() {
         this.player.move()
         const obstacleToKeep = []
@@ -57,9 +65,9 @@ class Game {
                 obstacleToKeep.push(obstacle)
             }
         })
-  
+
         this.obstacle = obstacleToKeep;
-  
+
         if (this.lives <= 0) {
             this.isGameOver = true
         }
@@ -67,13 +75,13 @@ class Game {
     endGame() {
         this.player.element.remove()
         this.obstacle.forEach(obstacle => obstacle.element.remove())
-    
+
         // Hide game screen
         this.gameScreen.style.display = 'none'
         // Show end game screen
         this.gameEndScreen.style.display = 'block'
-      }
     }
+}
 
 
 
