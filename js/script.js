@@ -5,32 +5,42 @@ window.addEventListener('load', () => {
     const restartButton = document.getElementById
         ("restart-button")
 
+const showInstructionsButton = document.getElementById('instructions-button');
+const instructions = document.getElementById('instructions');
+function showInstructions() {
+    instructions.style.display = 'block';
+  }
+console.log(showInstructionsButton)
+showInstructionsButton.addEventListener('click', function () {
+    showInstructions();
+})
+
     let game
 
     function startGame() {
         console.log("start game");
         game = new Game()
         game.start()
+
         document.addEventListener('keydown', event => {
             const key = event.key;
             const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
 
             if (possibleKeyStrokes.includes(key)) {
-                event.preventDefault();
-
+        
                 // Update player directionX and directionY based on the key pressed
                 switch (key) {
                     case "ArrowLeft":
-                        game.player.directionX = -4;
+                        game.player.directionX = -5;
                         break
                     case "ArrowUp":
-                        game.player.directionY = -4;
+                        game.player.directionY = -5;
                         break
                     case "ArrowRight":
-                        game.player.directionX = 4;
+                        game.player.directionX = 5;
                         break
                     case "ArrowDown":
-                        game.player.directionY = 4;
+                        game.player.directionY = 5;
                         break
                 }
 
@@ -44,7 +54,7 @@ window.addEventListener('load', () => {
             const possibleKeystrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
 
             if (possibleKeystrokes.includes(key)) {
-                event.preventDefault();
+                
 
                 // Update player directionX and directionY based on the key pressed
                 switch (key) {
@@ -61,18 +71,15 @@ window.addEventListener('load', () => {
         })
     }
 
+
     startButton.addEventListener('click', function () {
         startGame();
     });
+
+    restartButton.addEventListener('click', () => {
+        location.reload()
+    });
+
+
 });
 
-const showInstructionsButton = document.getElementById('show-instructions');
-const instructions = document.getElementById('instructions');
-
-function showInstructions() {
-  instructions.style.display = 'block';
-}
-
-showInstructionsButton.addEventListener('click', function () {
-    showInstructions();
-})

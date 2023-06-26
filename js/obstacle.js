@@ -30,4 +30,4 @@ class Obstacle {
         this.element.style.top = `${this.top}px`
         this.element.style.right = `${this.right}px`
     }
-  }
+}

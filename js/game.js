@@ -8,19 +8,20 @@ class Game {
         this.gameEndScreen = document.getElementById
             ('game-over')
   
-        this.player = null;
-        this.height = 100
-        this.width = 100
+        
+        this.height = 800
+        this.width = 1000
         this.player = new Player(this.gameScreen)
         this.obstacle = [new Obstacle(this.gameScreen)]
         this.isGameOver = false
         this.score = 0
         this.lives = 3
+        this.animateId
     }
   
     start() {
-        this.gameScreen.style.width = `${this.width}vw`
-        this.gameScreen.style.height = `${this.height}vh`
+        this.gameScreen.style.width = `${this.width}px`
+        this.gameScreen.style.height = `${this.height}px`
   
         this.startScreen.style.display = 'none'
         this.gameScreen.style.display = 'block'
@@ -37,7 +38,7 @@ class Game {
   
   
         if (this.isGameOver) {
-            console.log('GameOver')
+           this.endGame()
         }
         requestAnimationFrame(() => this.gameLoop())
     }
@@ -50,7 +51,7 @@ class Game {
             if (this.player.didCollide(obstacle)) {
                 obstacle.element.remove();
                 this.lives -= 1
-            } else if (obstacle.right > this.gameScreen.offsetHeight) {
+            } else if (obstacle.left < 0) {
                 this.score += 1
             } else {
                 obstacleToKeep.push(obstacle)
@@ -63,4 +64,20 @@ class Game {
             this.isGameOver = true
         }
     }
-  }
+    endGame() {
+        this.player.element.remove()
+        this.obstacle.forEach(obstacle => obstacle.element.remove())
+    
+        // Hide game screen
+        this.gameScreen.style.display = 'none'
+        // Show end game screen
+        this.gameEndScreen.style.display = 'block'
+      }
+    }
+
+
+
+
+
+
+

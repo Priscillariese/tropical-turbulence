@@ -2,8 +2,8 @@ class Player {
 
     constructor(gameScreen) {
         this.gameScreen = gameScreen
-        this.with = 80
-        this.height = 150
+        this.with = 150
+        this.height = 200
         this.top = 700
         this.left = 200
         this.directionX = 0
@@ -25,7 +25,7 @@ class Player {
     move() {
         this.left += this.directionX;
         this.top += this.directionY;
-        if (this.left < 10) {
+      /* if (this.left < 10) {
             this.left = 10
         }
         if (this.top < 0) {
@@ -39,7 +39,7 @@ class Player {
         if (this.top > this.gameScreen.offsetHeight - this.height - 180) {
             this.top = this.gameScreen.offsetHeight - this.height - 180;
         }
-  
+    */
         this.updatePosition();
     }
   
@@ -59,8 +59,11 @@ class Player {
                     playerRect.top < obstacleRect.bottom &&
                     playerRect.bottom > obstacleRect.top
                 ) {
+                    console.log("true");
+
                     return true;
                 } else {
+                    console.log("false");
                     return false;
                 }
             }

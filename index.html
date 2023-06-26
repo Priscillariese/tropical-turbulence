@@ -13,21 +13,22 @@
        
         <!-- #game-start is initially shown on the game start screen -->
         <div id="game-start">
+            <img class="image-logo" src="./images/logo-img.png">
             <br />
             <button id="start-button">Start Game</button>
-        </div>
-      
-            <div id="instruction" style="display: none;">
-                <h2>Instruction of the Game</h2>
+
+            <div id="instructions" style="display: none;">
+                <h2><strong>Instruction of the Game</strong></h2>
                 <p>Welcome aboard Capitan, today we need your help to transport the passengers safely to their final destination.<br/>
                     The weather is tropical, with turbulence and flying objects in the other dimension. <br/>
                     Close the doors and bon voyage.</p>
                 <p>Use the arrows to move the plane .</p>
               </div>
-              <button id="instruction">Instruction</button>
+              <button id="instructions-button">Instruction</button>
+        </div>
+      
+           
               
-
-
 
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen">
@@ -41,7 +42,7 @@
 
         <!-- #game-over CSS style display: none -->
         <div id="game-over">
-            <img src="./images/image-logo.png" alt="logo-img" class="logo-img" />
+            <img src="./images/game-over.png" alt="game-over" class="game-over" />
             <h1>Game Over</h1>
             <br />
             <button id="restart-button">Restart</button>
@@ -52,5 +53,4 @@
     <script type="text/javascript" src="js/obstacle.js"></script> 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
-
 </html>
