@@ -4,43 +4,41 @@ body {
     background-size: center;
     background-repeat: no-repeat;
     background-color: rgb(0, 0, 22);
-    background-image: url(../images/logo-img.png)
+    background-image: url(../images/turbulence.png)
+  }
+  
 
-  }
-  
- #game-screen {
-    display: none;
-    align-content: center;
-    position: relative;
-    background-image: url(../images/background.png);
-    background-size: cover;
-    animation: slide 5s linear infinite;
-    width: 100vw;
-    height: 100vh;
-  }
-  
   #game-container {
     display: flex;
     width: 100vw;
     justify-content: flex-start;
-    color: #12c2e9;
-  }
+    color: #d0d6db;
   
 
-  @keyframes slide {
-  
-    0% {
-        background-position: 1500px 0;
-    }
-  
-    95% {
-        background-position: 0 0;
-    }
-  
-    100% {
-        background-position: -50px 0;
-    }
   }
+#game-screen {
+    display: none;
+    align-content: center;
+    position: relative;
+  background-image: url(../images/background.png);
+   background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+  @keyframes slide {
+  0% {
+    background-position: 1500px 0;
+  }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -50px 0;
+  }
+}
   
   #game-over {
     display: none;
@@ -56,7 +54,7 @@ body {
     width: 160px;
     height: 40px;
     line-height: 0px;
-    top: 50%;
+    top: 10%;
     left: 50%;
     display: inline-block;
     text-align:center;
@@ -80,8 +78,8 @@ body {
     width: 160px;
     height: 40px;
     line-height: 0px;
-    top: 56%;
-    left: -7%;
+    top: 10%;
+    left: 50%;
     display: inline-block;
     text-align:center;
     color: #053861;
@@ -99,11 +97,7 @@ body {
   }
   
   
-  #start-button {
-    margin-top: 8%;
-    margin-bottom: 1%;
-  }
-  
+ 
   #start-button:hover {
     box-shadow: 0 0 10px 0 #18adf1 inset, 0 0 20px 2px #18adf1;
     border: 3px solid #18adf1;
